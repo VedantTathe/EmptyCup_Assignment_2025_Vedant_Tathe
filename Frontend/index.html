@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EmptyCup Designers</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-circle">
+            <img src="assets/images/logo-small.png" alt="Logo" />
+        </div>
+        <h1>EmptyCup</h1>
+        <button aria-label="Menu">
+            <img src="assets/images/three-dots.png" alt="">
+        </button>
+    </header>
+
+    <nav>
+        <div class="nav-left">
+            <button class="contacts">
+                <div class="icon-wrapper" style="border: 2px solid black; ">
+                    <img src="assets/images/contact_inner.png" alt="Contacts" style="padding: 2px;" />
+                </div>
+                <span style="color:#E0A64E">Contacts</span>
+            </button>
+
+            <button>
+                <div class="icon-wrapper">
+                    <img src="assets/images/galary.png" alt="Galary" />
+                </div>
+                <span>Galary</span>
+            </button>
+
+            <button class="map" style="cursor: auto;">
+                <div class="icon-wrapper">
+                    <img src="assets/images/map.png" alt="Map" />
+                </div>
+                <span>Map</span>
+            </button>
+        </div>
+
+        <div class="nav-right">
+            <button id="shortlistedBtn">
+                <div class="icon-wrapper">
+                    <img src="assets/images/shortlisted.png" alt="Shortlisted" />
+                </div>
+                <span>Shortlisted</span>
+            </button>
+
+            <button>
+                <div class="icon-wrapper">
+                    <img src="assets/images/sort.png" alt="Sort" />
+                </div>
+                <span>Sort</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="designerCardsContainer" style="color:white;"></div>
+
+    <div id="loaderContainer" class="loader-container" style="display:none;">
+        <div class="loader"></div>
+        <div class="loader-text">Loading designers...</div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
