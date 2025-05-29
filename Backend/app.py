@@ -9,10 +9,21 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-MONGO_URI = os.getenv("MONGO_URI")
-client = MongoClient(MONGO_URI)
+
+mongo_url = os.environ.get("DB_NAME")
+
+client = MongoClient("mongodb://mongo:27017/")
+
+if mongo_url:
+    client = MongoClient(mongo_url)
+
 db = client[os.getenv("DB_NAME")]
 collection = db[os.getenv("COLL_NAME")]
+
+
+@app.route("/", methods=["GET"])
+def greet():
+    return jsonify("Hello Welcome..!")
 
 @app.route("/data", methods=["GET"])
 def get_data():

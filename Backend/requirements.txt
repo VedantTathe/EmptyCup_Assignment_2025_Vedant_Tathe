@@ -2,4 +2,3 @@ Flask
 pymongo
 python-dotenv
 flask-cors
-psycopg2

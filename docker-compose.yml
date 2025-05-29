@@ -1,0 +1,31 @@
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./Backend
+    container_name: flask-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/DesignersDB
+
+  frontend:
+    image: nginx:alpine
+    container_name: static-frontend
+    volumes:
+      - ./Frontend:/usr/share/nginx/html
+    ports:
+      - "5500:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
