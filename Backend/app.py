@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-mongo_url = os.environ.get("DB_NAME")
+mongo_url = os.environ.get("MONGO_URI")
 
 client = MongoClient("mongodb://mongo:27017/")
 
