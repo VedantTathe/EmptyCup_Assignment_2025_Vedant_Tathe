@@ -90,11 +90,11 @@ function createStarRating(rating) {
 
 
 function createDesignerCard(designer, index) {
-  const isShortlisted = shortlistedIds.includes(designer.id);
+  const isShortlisted = shortlistedIds.includes(designer._id);
   const starRatingHTML = createStarRating(designer.rating);
 
   const cardHTML = `
-    <div id="designer-${designer.id}" class="designer-card ${index % 2 === 0 ? 'even' : 'odd'} ${isShortlisted ? 'shortlisted' : ''}">
+    <div id="designer-${designer._id}" class="designer-card ${index % 2 === 0 ? 'even' : 'odd'} ${isShortlisted ? 'shortlisted' : ''}">
       <div class="designer-left">
         <h3>${designer.name}</h3>
         ${starRatingHTML}
@@ -118,7 +118,7 @@ function createDesignerCard(designer, index) {
           <img src="assets/images/eye-slash.png" alt="Hide" />
           <span style="font-size:10px">Hide</span>
         </button>
-        <button type="button" onclick="toggleShortlist(${designer.id})">
+        <button type="button" onclick="toggleShortlist('${designer._id}')">
           <img src="assets/images/${isShortlisted ? 'Vector.png' : 'Vector_unfilled.png'}" alt="Shortlist" />
           <span style="font-size:10px">Shortlist</span>
         </button>
@@ -139,7 +139,7 @@ function createDesignerCard(designer, index) {
 function reloadDesigners() {
   designerCardsContainer.innerHTML = '';
   const list = showOnlyShortlisted
-  ? designers.filter(d => shortlistedIds.includes(d.id))
+  ? designers.filter(d => shortlistedIds.includes(d._id))
     : designers;
 
     if (list.length === 0) {
