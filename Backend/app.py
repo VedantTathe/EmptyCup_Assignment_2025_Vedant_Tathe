@@ -38,9 +38,8 @@ def get_data():
     conn.close()
     return jsonify(rows)
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
 
 # from flask import Flask, jsonify
 # from pymongo import MongoClient

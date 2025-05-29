@@ -170,7 +170,7 @@ function toggleShortlistedView() {
 
 function loadDesigners() {
   loaderContainer.style.display = 'flex';
-  fetch('http://localhost:5000/data')
+  fetch('https://emptycup-assignment-2025-vedant-tathe.onrender.com/data')
   .then(res => {
       if (!res.ok) throw new Error('Network error');
       return res.json();
