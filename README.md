@@ -11,16 +11,16 @@ This project is a full-stack assignment project (using html, css, js, python, fl
 You can view the live project here:
 **[https://emptycup-assignment-by-vedanttathe.netlify.app/](https://emptycup-assignment-by-vedanttathe.netlify.app/)**
 
-* Frontend: 
+* Frontend (Netlify): 
 **[https://emptycup-assignment-by-vedanttathe.netlify.app/](https://emptycup-assignment-by-vedanttathe.netlify.app/)**
-* Backend:
+* Backend (Onrender):
 **[https://emptycup-assignment-2025-vedant-tathe.onrender.com/data/](https://emptycup-assignment-2025-vedant-tathe.onrender.com/data)**
 
 ---
 
 ### ✅ Option 2: Run Locally
 
-1. Download the zip file from github.
+1. Download the zip file from github or pull repository from github.
 2. Extract it anywhere on your system.
 3. Open a terminal in the extracted folder and run:
 
