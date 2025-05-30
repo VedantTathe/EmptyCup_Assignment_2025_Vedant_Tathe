@@ -6,6 +6,8 @@ import os
 import json
 import time
 from dotenv import load_dotenv, dotenv_values
+import threading
+import requests
 
 load_dotenv()
 
@@ -25,7 +27,7 @@ client = MongoClient(mongo_url)
 max_retries = 2
 for attempt in range(max_retries):
     try:
-        client.admin.command('ping')  # ping MongoDB
+        client.admin.command('ping') 
         print("MongoDB connection established.")
         break
     except ServerSelectionTimeoutError:
@@ -46,11 +48,26 @@ def greet():
 @app.route("/data", methods=["GET"])
 def get_data():
     data = list(collection.find({}))
-    print("data: ",data)
+    # print("data: ", data)
     for item in data:
         item['_id'] = str(item['_id'])  
-
     return jsonify(data)
 
+@app.route("/ping", methods=["GET"])
+def ping():
+    return jsonify({"message": "pong"}), 200
+
+# Background thread to self-ping every 30 seconds
+def ping_self():
+    url = os.getenv("SELF_URL", "http://localhost:5000/ping")  # or your deployed URL
+    while True:
+        try:
+            print("Website Reloaded....", flush=True)
+            requests.get(url)
+        except Exception as e:
+            print("Ping failed:", e, flush=True)
+        time.sleep(30)
+
 if __name__ == '__main__':
+    threading.Thread(target=ping_self, daemon=True).start()
     app.run(host='0.0.0.0', port=int(os.getenv("PORT", 5000)))
