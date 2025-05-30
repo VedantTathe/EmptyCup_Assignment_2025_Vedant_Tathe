@@ -138,10 +138,12 @@ function createDesignerCard(designer, index) {
 
 function reloadDesigners() {
   designerCardsContainer.innerHTML = '';
+  console.log(showOnlyShortlisted);
   const list = showOnlyShortlisted
   ? designers.filter(d => shortlistedIds.includes(d._id))
     : designers;
 
+    console.log("list",list);
     if (list.length === 0) {
     designerCardsContainer.innerHTML = '<p style="color:black; text-align:center; padding: 2rem;">No designers to show.</p>';
     return;
@@ -167,11 +169,24 @@ function toggleShortlistedView() {
   btn.querySelector('.icon-wrapper img').src= "assets/images/shortlisted.png"
   reloadDesigners();
 }
+// const API_BASE_URL = location.hostname === 'localhost'
+//   ? 'http://localhost:5000'
+//   : 'https://emptycup-assignment-2025-vedant-tathe.onrender.com';
+
+let API_BASE_URL = 'http://localhost:5000';
+if(location.hostname != 'localhost' && location.hostname != '127.0.0.1')
+{
+  API_BASE_URL = 'https://emptycup-assignment-2025-vedant-tathe.onrender.com/data';
+
+}
+
+console.log(API_BASE_URL);
+console.log(location.port)
 
 function loadDesigners() {
   loaderContainer.style.display = 'flex';
   // fetch('https://emptycup-assignment-2025-vedant-tathe.onrender.com/data')
-  fetch('http://localhost:5000/data')
+  fetch(`${API_BASE_URL}/data`)
   .then(res => {
       if (!res.ok) throw new Error('Network error');
       return res.json();
@@ -179,11 +194,12 @@ function loadDesigners() {
     .then(data => {
       designers = data;
       loaderContainer.style.display = 'none';
+      showOnlyShortlisted = false;
       reloadDesigners();
     })
     .catch(err => {
       loaderContainer.style.display = 'none';
-      alert('Failed to load..! Please try again later.');
+      console.log('Failed to load..! Please try again later.');
       console.error(err);
     });
 }

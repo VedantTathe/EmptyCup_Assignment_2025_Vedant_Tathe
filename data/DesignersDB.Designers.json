@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "6838294c1a03561e12f855cb"
+  },
+  "description": "Passionate team of 4 designers working out of Bangalore with an experience of 4 years.",
+  "name": "Epic Designs",
+  "phone1": "+91 - 984532853",
+  "phone2": "+91 - 984532854",
+  "price": "$$",
+  "projects": 57,
+  "rating": 3.5,
+  "years": 8
+},
+{
+  "_id": {
+    "$oid": "6838294c1a03561e12f855cc"
+  },
+  "description": "Passionate team of 4 designers working out of Bangalore with an experience of 4 years.",
+  "name": "Studio - D3",
+  "phone1": "+91 - 984532853",
+  "phone2": "+91 - 984532854",
+  "price": "$$$",
+  "projects": 43,
+  "rating": 4.5,
+  "years": 6
+},
+{
+  "_id": {
+    "$oid": "6838294c1a03561e12f855cd"
+  },
+  "description": "Passionate team of 4 designers working out of Bangalore with an experience of 4 years.",
+  "name": "House of designs",
+  "phone1": "+91 - 984532853",
+  "phone2": "+91 - 984532854",
+  "price": "$$",
+  "projects": 38,
+  "rating": 4.2,
+  "years": 5
+}]

@@ -1,11 +1,16 @@
+version: "3.8"
+
 services:
   mongo:
-    image: mongo
-    container_name: mongo
+    image: mongo:latest
+    restart: unless-stopped
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+      - ./data/DesignersDB.Designers.json:/docker-entrypoint-initdb.d/DesignersDB.Designers.json:ro
+      - ./data/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+
 
   backend:
     build: ./Backend
@@ -15,13 +20,15 @@ services:
     depends_on:
       - mongo
     environment:
-      - MONGO_URL=mongodb://mongo:27017/DesignersDB
+      MONGO_URI: mongodb://mongo:27017/
+      DB_NAME: DesignersDB
+      COLL_NAME: Designers
 
   frontend:
     image: nginx:alpine
     container_name: static-frontend
     volumes:
-      - ./Frontend:/usr/share/nginx/html
+      - ./Frontend:/usr/share/nginx/html:ro
     ports:
       - "3000:80"
     depends_on:
