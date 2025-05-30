@@ -176,7 +176,7 @@ function toggleShortlistedView() {
 let API_BASE_URL = 'http://localhost:5000';
 if(location.hostname != 'localhost' && location.hostname != '127.0.0.1')
 {
-  API_BASE_URL = 'https://emptycup-assignment-2025-vedant-tathe.onrender.com/data';
+  API_BASE_URL = 'https://emptycup-assignment-2025-vedant-tathe.onrender.com';
 
 }
 
