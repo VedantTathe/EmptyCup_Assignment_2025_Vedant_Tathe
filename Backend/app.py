@@ -14,17 +14,14 @@ print(dotenv_values())
 app = Flask(__name__)
 CORS(app)
 
-# Read environment variables (works both locally and in Docker Compose)
 mongo_url = os.getenv("MONGO_URI", "mongodb://mongo:27017")
 db_name = os.getenv("DB_NAME", "DesignersDB")
 coll_name = os.getenv("COLL_NAME", "Designers")
 
 print("Connecting to MongoDB at:", mongo_url)
 
-# Setup MongoDB client
 client = MongoClient(mongo_url)
 
-# Retry loop to wait for MongoDB readiness
 max_retries = 2
 for attempt in range(max_retries):
     try:
