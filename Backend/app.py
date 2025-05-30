@@ -57,9 +57,8 @@ def get_data():
 def ping():
     return jsonify({"message": "pong"}), 200
 
-# Background thread to self-ping every 30 seconds
 def ping_self():
-    url = os.getenv("SELF_URL", "http://localhost:5000/ping")  # or your deployed URL
+    url = os.getenv("SELF_URL", "http://localhost:5000/ping") 
     while True:
         try:
             print("Website Reloaded....", flush=True)
