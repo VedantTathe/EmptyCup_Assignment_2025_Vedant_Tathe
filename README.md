@@ -68,11 +68,11 @@ docker-compose up --build
 
 ## Example .env File
 
-MONGO_URI=mongodb://localhost:27017/
-DB_NAME=DesignersDB
-COLL_NAME=Designers
-PORT=5000
-SELF_URL=http://localhost:5000/ping
+* MONGO_URI=mongodb://localhost:27017/
+* DB_NAME=DesignersDB
+* COLL_NAME=Designers
+* PORT=5000
+* SELF_URL=http://localhost:5000/ping
 
 ---
 
