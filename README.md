@@ -20,15 +20,16 @@ You can view the live project here:
 
 ### ✅ Option 2: Run Locally
 
-1. Download the provided zip file.
+1. Download the zip file from github.
 2. Extract it anywhere on your system.
 3. Open a terminal in the extracted folder and run:
 
 ```bash
 docker-compose up --build
 ```
+> Make sure to run the docker first
 
-✅ That's it! The project is now running.
+*✅ That's it! The project is now running.
 
 > 🚨 **Internet is only required the first time** to pull Docker images. After that, it runs completely offline.
 
