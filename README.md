@@ -11,10 +11,10 @@ This project is a full-stack assignment project (using html, css, js, python, fl
 You can view the live project here:
 **[https://emptycup-assignment-by-vedanttathe.netlify.app/](https://emptycup-assignment-by-vedanttathe.netlify.app/)**
 
-Frontend: 
+* Frontend: 
 **[https://emptycup-assignment-by-vedanttathe.netlify.app/](https://emptycup-assignment-by-vedanttathe.netlify.app/)**
-Backend:
-**[https://emptycup-assignment-2025-vedant-tathe.onrender.com/data/)**
+* Backend:
+**[https://emptycup-assignment-2025-vedant-tathe.onrender.com/data/](https://emptycup-assignment-2025-vedant-tathe.onrender.com/data)**
 
 ---
 
